@@ -1,0 +1,19 @@
+#trecho de código para substituir caracteres num documento csv
+#util para substituições do caractere separador
+#aqui desejo modificar o caractere ',' por ';' e o caractere '.' por ','
+
+#abre o arquivo que deve ter os carateres substituidos
+leitura = open('Pedidos.csv', 'r')
+#cria um novo arquivo que vai estar com os caracteres modificados
+novoarquivo = open('PedidosNovo.csv', 'w')
+
+#faz a converção e escreve no arquivo novo
+for line in leitura:
+    spam = line    
+    dado = spam.replace(",", ";")
+    ponto = dado.replace(".",",")    
+    novoarquivo.write(ponto)
+
+#fecha os arquivos
+leitura.close()
+novoarquivo.close()
